@@ -1,0 +1,61 @@
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+    <div class="container">
+
+      <a class="navbar-brand fw-bold" href="/">🎵 Music-Vinils</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <!-- Contenedor principal con espacio entre lados -->
+        <div class="d-flex w-100 align-items-center justify-content-between">
+
+          <!-- Izquierda: Categoría + Idioma -->
+          <ul class="navbar-nav d-flex align-items-center gap-3 mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <select id="category-select" class="form-select form-select-sm bg-dark text-white border-secondary" aria-label="Seleccionar categoría">
+                <option selected>Categoría</option>
+                <option value="jazz">JAZZ</option>
+                <option value="pop">POP</option>
+                <option value="rock">ROCK</option>
+                <option value="rock-espanol">ROCK EN ESPAÑOL</option>
+              </select>
+            </li>
+            <li class="nav-item">
+              <select id="language-select" class="form-select form-select-sm bg-dark text-white border-secondary" aria-label="Seleccionar idioma">
+                <option selected>Idioma</option>
+                <option value="en">INGLÉS</option>
+                <option value="es">ESPAÑOL</option>
+              </select>
+            </li>
+          </ul>
+
+          <!-- Derecha: Enlaces de usuario -->
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            {{#if user}}
+              <li class="nav-item">
+                <a class="nav-link" href="/cart"><i class="fas fa-shopping-cart"></i> Carrito</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/profile">Perfil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/logout">Cerrar sesión</a>
+              </li>
+            {{else}}
+              <li class="nav-item">
+                <a class="nav-link" href="/login">Iniciar sesión</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/register">Registrarse</a>
+              </li>
+            {{/if}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>

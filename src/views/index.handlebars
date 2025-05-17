@@ -1,0 +1,33 @@
+{{> menu}}
+<section class="hero">
+  <div class="container text-center py-5">
+    <h1 class="display-4 fw-bold">Bienvenido a Music-Vinils</h1>
+    <p class="lead">Descubre formatos musicales únicos en vinilo, CD y acetato.</p>
+  </div>
+</section>
+
+<section class="products py-5 bg-light">
+  <div class="container">
+    <div class="row g-4">
+      {{#each products}}
+      <div class="col-md-4">
+        <div class="card shadow-sm bg-secondary text-white h-100">
+          <img src="{{this.thumbnails.[0]}}" class="card-img-top" alt="{{this.title}}">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">{{this.title}}</h5>
+            <p class="card-text text-muted mb-2">Autor: {{this.author}}</p>
+            <p class="card-text fw-bold fs-5 mb-2">$ {{this.price}}</p>
+            <p class="card-text mb-2"><small>Categoría: {{this.category}}</small></p>
+            <p class="card-text mb-2"><small>Formato: {{this.type}}</small></p>
+          </div>
+          <div class="card-footer bg-secondary border-top-0">
+            <a href="/product/{{this._id}}" class="btn btn-primary w-100">
+              <i class="fas fa-info-circle me-1"></i> Ver detalles
+            </a>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</section>
