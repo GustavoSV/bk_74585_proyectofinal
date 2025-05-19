@@ -64,7 +64,7 @@ const loginCb = async (req, res, next) => {
     // enviar respuesta al cliente
     const data = { method, url, message, user };
     res
-      .status(201)
+      .status(200)
       .cookie("user_id", user._id, opts)
       .cookie("role", user.role, opts)
       .cookie("email", user.email, opts)

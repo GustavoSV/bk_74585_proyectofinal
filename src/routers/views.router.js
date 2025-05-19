@@ -36,9 +36,21 @@ const registerViewCb = (req, res) => {
   }
 };
 
+const productViewCb = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const product = await productsManager.readById(id);
+    product.isAvailable = product.stock > 0;
+    res.render("productDetail.handlebars", { title: "Product Detail", product})
+  } catch (error) {
+    res.status(error.statusCode || 500).render("error", { error });
+  }
+};
+
 viewsRouter.get("/", homeViewCb);
 viewsRouter.get("/login", loginViewCb);
 viewsRouter.get("/profile", profileViewCb);
 viewsRouter.get("/register", registerViewCb);
+viewsRouter.get("/product/:id", productViewCb);
 
 export { viewsRouter };

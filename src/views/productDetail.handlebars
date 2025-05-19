@@ -1,0 +1,53 @@
+{{> menu }}
+
+<div class="container py-5">
+  <div class="row g-4 align-items-center">
+
+    <!-- Imagen principal (solo thumbnails[0]) -->
+    <div class="col-md-6">
+      {{#if product.thumbnails.[0]}}
+        <img src="{{product.thumbnails.[0]}}" class="img-fluid rounded" alt="{{product.title}}" style="width: 400px; height: 400px; object-fit: cover;">
+      {{else}}
+        <img src="/images/default-product.jpg" class="img-fluid rounded" alt="Imagen no disponible">
+      {{/if}}
+    </div>
+
+    <!-- Detalles del producto -->
+    <div class="col-md-6">
+      <h2 class="fw-bold mb-3">{{product.title}}</h2>
+      <p class="text-white-50 fs-5 mb-1">Autor: <strong>{{product.author}}</strong></p>
+      <p class="text-white-50 fs-5 mb-1">Categoría: <strong>{{product.category}}</strong></p>
+      <p class="text-white-50 fs-5 mb-1">Idioma: <strong>{{product.language}}</strong></p>
+      <p class="text-white-50 fs-5 mb-1">Formato: <strong>{{product.type}}</strong></p>
+      <p class="text-white-50 fs-5 mb-1">Código: <strong>{{product.code}}</strong></p>
+      <p class="fs-3 text-primary fw-bold my-3">$ {{product.price}}</p>
+
+      <div class="d-flex gap-3 align-items-center mb-4">
+        {{#if product.isAvailable}}
+          <input type="number" min="1" max="{{product.stock}}" value="1" id="quantity" class="form-control form-control-sm w-auto bg-dark text-white border-secondary" />
+          <button class="btn btn-success" onclick="addToCart('{{product._id}}')">
+            <i class="fas fa-shopping-cart me-2"></i>Añadir al carrito
+          </button>
+        {{else}}
+          <input type="number" disabled class="form-control form-control-sm w-auto bg-dark text-white border-secondary opacity-50" placeholder="Agotado" />
+          <button class="btn btn-secondary" disabled>
+            <i class="fas fa-shopping-cart me-2"></i>Producto agotado
+          </button>
+        {{/if}}
+      </div>
+
+      <p class="text-white-50 mt-3">
+        {{#if product.isAvailable}}
+          <span class="badge bg-success">Disponible</span>
+        {{else}}
+          <span class="badge bg-danger">No disponible</span>
+        {{/if}}
+        - Stock: {{product.stock}}
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<!-- SweetAlert2 script -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2 @11"></script>

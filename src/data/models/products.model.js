@@ -7,7 +7,7 @@ const schema = new Schema({
   title: { type: String, required: true },
   author: { type: String, required: true },
   category: { type: String, required: true, enum: ["JAZZ", "POP", "ROCK", "ROCK EN ESPAÑOL"] },
-  lenguage: { type: String, required: true, enum: ["INGLES", "ESPAÑOL"] },
+  language: { type: String, required: true, enum: ["INGLES", "ESPAÑOL"] },
   price: { type: Number, required: true },
   status: { type: Boolean, default: true },
   stock: { type: Number, required: true, default: 0 },
