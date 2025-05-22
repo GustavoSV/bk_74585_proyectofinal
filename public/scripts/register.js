@@ -21,7 +21,12 @@ document.addEventListener("DOMContentLoaded", async () => {
         body: JSON.stringify(data)
       }
       const response = await fetch('/api/auth/register', options);
+      console.log('response:', response);
+
       const result = await response.json();
+      console.log('result:', result);
+      
+      
       
       if (result.error) {
         Swal.fire({
@@ -41,7 +46,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           timerProgressBar: true,
           showConfirmButton: false
         }).then((result) => {
-          window.location.href = '/login';
+          // window.location.href = '/login';
         });
       }
     } catch (error) {

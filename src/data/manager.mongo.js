@@ -7,14 +7,15 @@ class ManagerMongo {
     this.model = model;
   }
 
-  createOne = async (data) => {
-    try {
-      await this.model.create(data);
-    } catch (error) {
-      console.log("createOne ERROR:", error);
-      throw error;
-    }
-  };
+  // createOne = async (data) => {
+  //   try {
+  //     await this.model.create(data);
+  //   } catch (error) {
+  //     console.log("createOne ERROR:", error);
+  //     throw error;
+  //   }
+  // };
+  createOne = async (data) => await this.model.create(data);
   readAll = async (filter) => await this.model.find(filter).lean();
   readBy = async (data) => await this.model.findOne(data).lean();
   readById = async (id) => await this.model.findById(id).lean();
@@ -22,8 +23,8 @@ class ManagerMongo {
   destroyById = async (id) => await this.model.findByIdAndDelete(id);
 }
 
-const userManager = new ManagerMongo(User);
+const usersManager = new ManagerMongo(User);
 const productsManager = new ManagerMongo(Product);
 const cartsManager = new ManagerMongo(Cart);
 
-export { userManager, productsManager, cartsManager };
+export { usersManager, productsManager, cartsManager };
