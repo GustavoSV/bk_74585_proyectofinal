@@ -1,0 +1,36 @@
+{{> menu }}
+
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card bg-dark text-white shadow-sm">
+        <div class="card-header bg-black text-center">
+          <h2 class="mb-0">Perfil de Usuario</h2>
+        </div>
+        <div class="card-body d-flex align-items-center">
+          <!-- Avatar -->
+          <div class="me-4">
+            <img src="{{profile.avatar}}" alt="Avatar" class="rounded-circle" style="width: 100px; height: 100px; object-fit: cover;">
+          </div>
+
+          <!-- Datos del usuario -->
+          <div>
+            <h5 class="fw-bold mb-3">Hola, {{profile.name}}</h5>
+            <p class="mb-2"><strong>Email:</strong> {{profile.email}}</p>
+            <p class="mb-2"><strong>Rol:</strong> {{profile.role}}</p>
+            {{#if profile.date}}
+              <p class="mb-2"><strong>Fecha de nacimiento:</strong> {{profile.date}}</p>
+            {{/if}}
+            {{#if profile.city}}
+              <p class="mb-2"><strong>Ciudad:</strong> {{profile.city}}</p>
+            {{/if}}
+          </div>
+        </div>
+        <div class="card-footer bg-black d-flex justify-content-between">
+          <a href="/" class="btn btn-outline-secondary">Volver al inicio</a>
+          <a href="/signout" class="btn btn-danger">Cerrar sesión</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

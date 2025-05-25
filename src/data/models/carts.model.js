@@ -11,9 +11,9 @@ const schema = new Schema(
   { timestamps: true }
 );
 
-// schema.pre(/^find/, function () {
-//   this.populate("user_id", "email avatar").populate("product_id", "title price stock");
-// });
+schema.pre(/^find/, function () {
+  this.populate("user_id", "email avatar").populate("product_id", "title price stock");
+});
 
 const Cart = model(collection, schema);
 export default Cart;

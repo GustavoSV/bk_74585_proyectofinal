@@ -12,8 +12,8 @@ body {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   background-color: #1a1a1a;
-  color: #7d3333;
-  border: 1px solid rgba(255,255,255,0.2);
+  color: #f1f1f1;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .form-select-sm:focus {

@@ -38,13 +38,13 @@
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             {{#if user}}
               <li class="nav-item">
-                <a class="nav-link" href="/cart"><i class="fas fa-shopping-cart"></i> Carrito</a>
+                <a class="nav-link" href="/cart/{{user._id}}"><i class="fas fa-shopping-cart"></i> Carrito</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/profile">Perfil</a>
+                <a class="nav-link" href="/profile/{{user._id}}">Perfil</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/logout">Cerrar sesión</a>
+                <a class="nav-link" href="/signout">Cerrar sesión</a>
               </li>
             {{else}}
               <li class="nav-item">
