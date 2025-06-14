@@ -5,13 +5,16 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./index.js"
+    "dev": "nodemon ./index.js --mode dev",
+    "start": "node ./index.js --mode prod",
+    "test": "node ./index.js --mode test"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^6.0.0",
+    "commander": "^14.0.0",
     "cookie-parser": "^1.4.7",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",

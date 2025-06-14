@@ -18,9 +18,5 @@ const schema = new Schema({
   timestamps: true,
 });
 
-// schema.pre(/^find/, function () {
-//   this.populate("owner_id", "email avatar");
-// });
-
 const Product = model(collection, schema);
 export default Product;

@@ -1,5 +1,5 @@
 import { RouterHelper } from "../helpers/router.helper.js";
-import { cartsManager, productsManager, usersManager } from "../data/manager.mongo.js";
+import { cartsManager, productsManager, usersManager } from "../dao/mongo/dao.mongo.js";
 import { isAuthenticated } from "../middlewares/isAuthenticated.mid.js";
 import { prepareCart } from "../helpers/dataCart.util.js";
 
