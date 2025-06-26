@@ -1,4 +1,4 @@
-class DaoFs {
+class DaoMemory {
   constructor() {
     
   }
@@ -11,8 +11,8 @@ class DaoFs {
   destroyById = async (id) => {/* eliminar un registro */};
 }
 
-const usersManager = new DaoFs();
-const productsManager = new DaoFs();
-const cartsManager = new DaoFs();
+const usersManager = new DaoMemory();
+const productsManager = new DaoMemory();
+const cartsManager = new DaoMemory();
 
 export { usersManager, productsManager, cartsManager };

@@ -7,6 +7,7 @@ class UsersController {
 
   createOne = async (req, res) => {
     const data = req.body;
+    
     const one = await this.service.createOne(data);
     res.status(201).json({
       method: req.method,

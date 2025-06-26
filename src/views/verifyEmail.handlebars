@@ -1,0 +1,22 @@
+{{> menu}}
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-sm p-4">
+        <h2 class="text-center mb-4">Verificación de Email</h2>
+        <form>
+          <div class="mb-3">
+            <label for="email" class="form-label">Correo electrónico</label>
+            <input type="email" class="form-control text-center" id="verify-email" disabled="true" value={{email}}>
+          </div>
+          <div class="mb-3">
+            <label for="verifyCode" class="form-label">Código de verificación</label>
+            <input type="text" class="form-control text-center" id="verify-code" required>
+          </div>
+          <button type="submit" id="submit-button" class="btn btn-primary w-100">Verificar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="module" src="/scripts/verifyEmail.js"></script>

@@ -7,12 +7,21 @@ class DaoMongo {
     this.model = model;
   }
 
-  createOne = async (data) => await this.model.create(data);
   readAll = async (filter) => await this.model.find(filter).lean();
-  readBy = async (data) => await this.model.findOne(data).lean();
+  readBy = async (filter) => await this.model.findOne(filter).lean();
   readById = async (id) => await this.model.findById(id).lean();
-  updateById = async (id, data) => await this.model.findByIdAndUpdate(id, data);
-  destroyById = async (id) => await this.model.findByIdAndDelete(id);
+  createOne = async (data) => {
+    const one = await this.model.insertOne(data);
+    return one;
+  };
+  updateById = async (id, data) => {
+    const one = await this.model.findByIdAndUpdate(id, data);
+    return one;
+  }
+  destroyById = async (id) => {
+    const one = await this.model.findByIdAndDelete(id);
+    return one;
+  }
 }
 
 const usersManager = new DaoMongo(User);

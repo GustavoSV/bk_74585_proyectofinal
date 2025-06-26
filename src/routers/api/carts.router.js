@@ -8,7 +8,7 @@ class CartsRouter extends RouterHelper {
   }
 
   init = () => {
-    this.postMeth("/", ["USER"], cartsController.createOne);
+    this.postMeth("/", ["USER", "ADMIN"], cartsController.createOne);
     this.getMeth("/", ["USER", "ADMIN"], cartsController.readAll);
     this.getMeth("/:id", ["USER"], cartsController.readById);
     this.putMeth("/:id", ["USER"], cartsController.updateById);
@@ -16,7 +16,6 @@ class CartsRouter extends RouterHelper {
   };
 }
 
-// const cartsRouter = new BaseRouter(cartsManager).getRouter();
 const cartsRouter = new CartsRouter().getRouter();
 
 export { cartsRouter };

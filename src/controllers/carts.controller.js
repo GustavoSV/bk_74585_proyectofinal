@@ -50,6 +50,7 @@ class CartsController {
   updateById = async (req, res) => {
     const { id } = req.params;
     const data = req.body;
+    
     const one = await this.services.updateById(id, data);
     if (one) {
       res.status(200).json({
