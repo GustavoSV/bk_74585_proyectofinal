@@ -1,4 +1,4 @@
-#Music Vinils tienda de música en formatos especiales
+# Music Vinils tienda de música en formatos especiales
 
 Consta de las sisguientes vistas:
   - Home: Se muestra todo el catálogo de títulos musicales en sus diferentes formatos
